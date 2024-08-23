@@ -40,6 +40,7 @@ plt.legend(title='Technologies', bbox_to_anchor=(1, 1), loc='upper left')
 plt.grid(True)
 plt.show()
 ```
+
 # OUTPUT:
 ![image](https://github.com/user-attachments/assets/f0c6e6d7-5172-4108-823e-039fdfde7a3b)
 
