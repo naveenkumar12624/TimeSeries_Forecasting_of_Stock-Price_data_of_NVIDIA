@@ -4,7 +4,6 @@
 
 # Ex.No: 01A PLOT A TIME SERIES DATA
 
-
 # AIM:
 To Develop a python program to Plot a time series data (population/ market price of a commodity
 /temperature.
@@ -41,24 +40,11 @@ plt.legend(title='Technologies', bbox_to_anchor=(1, 1), loc='upper left')
 plt.grid(True)
 plt.show()
 ```
+# OUTPUT:
+![image](https://github.com/user-attachments/assets/f0c6e6d7-5172-4108-823e-039fdfde7a3b)
 
 # Reult:
 Hence the TimeSeries data forecasting plotted succesfully to help the decision-makers in understanding current technology trends, informing strategic decisions about adopting or phasing out specific technologies based on industry movements.
 
 
 
-
-
-
-
-
-
-# OUTPUT:
-
-
-
-
-
-
-# RESULT:
-Thus we have created the python code for plotting the time series of given data.
