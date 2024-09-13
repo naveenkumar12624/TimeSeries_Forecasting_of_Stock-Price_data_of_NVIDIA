@@ -1,11 +1,11 @@
 ### Name : Naveen Kumar S
 ### Reg.No : 212221240033
-### Date : 23/08/2024
+### Date : 
 
 # Ex.No: 01A PLOT A TIME SERIES DATA
 
 # AIM:
-To Develop a python program to Plot a time series data (population/ market price of a commodity
+To Develop a python program to Plot a time series data of NVIDIA's Stock Price.
 /temperature.
 # ALGORITHM:
 1. Import the required packages like pandas and matplot
@@ -24,28 +24,34 @@ import seaborn as sns
 # Register matplotlib converters (optional for some environments)
 register_matplotlib_converters()
 
-# Load the data from the CSV file
-data = pd.read_csv('G:/sem7/TSA/migrations.csv')
+# Load the NVIDIA dataset
+data = pd.read_csv('C:/Users/lenovo/Downloads/archive (2)/NVIDIA/NvidiaStockPrice.csv')
 
-# Count the occurrences of each technology in the "to" column per year
-trend_data = data.groupby(['year', 'to']).size().unstack().fillna(0)
+# Convert 'Date' column to datetime format and set it as the index
+data['Date'] = pd.to_datetime(data['Date'])
+data.set_index('Date', inplace=True)
 
-# Plotting the trends over time for each technology
+# Resample data to yearly frequency and take mean of 'Close' prices
+yearly_data = data['Close'].resample('Y').mean().reset_index(name='Close')
+
+# Prepare data for plotting
+trend_data = yearly_data.pivot_table(index='Date', values='Close')
+
+# Plotting the trends over time for the 'Close' price
 plt.figure(figsize=(14, 8))
-sns.lineplot(data=trend_data)
-plt.title('Technology Migration Trends Over the Years')
+sns.lineplot(data=yearly_data, x='Date', y='Close')
+plt.title('NVIDIA Stock Price Trends Over the Years')
 plt.xlabel('Year')
-plt.ylabel('Number of Migrations')
-plt.legend(title='Technologies', bbox_to_anchor=(1, 1), loc='upper left')
+plt.ylabel('Average Close Price')
 plt.grid(True)
 plt.show()
 ```
 
 # OUTPUT:
-![image](https://github.com/user-attachments/assets/f0c6e6d7-5172-4108-823e-039fdfde7a3b)
+![image](https://github.com/user-attachments/assets/f68da2ef-b4c4-443d-91ba-593e255c2c22)
 
 # Reult:
-Hence the TimeSeries data forecasting plotted succesfully to help the decision-makers in understanding current technology trends, informing strategic decisions about adopting or phasing out specific technologies based on industry movements.
+Hence the TimeSeries data forecasting plotted succesfully to help the decision-makers in understanding current stock trends of NVIDIA, informing strategic decisions about adopting or phasing out specific investments based on industry movements.
 
 
 
