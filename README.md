@@ -48,7 +48,8 @@ plt.show()
 ```
 
 # OUTPUT:
-![image](https://github.com/user-attachments/assets/f68da2ef-b4c4-443d-91ba-593e255c2c22)
+<img src="https://github.com/user-attachments/assets/f68da2ef-b4c4-443d-91ba-593e255c2c22" width=600/>
+
 
 # Reult:
 Hence the TimeSeries data forecasting plotted succesfully to help the decision-makers in understanding current stock trends of NVIDIA, informing strategic decisions about adopting or phasing out specific investments based on industry movements.
